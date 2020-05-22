@@ -28,7 +28,6 @@ Matrix Matrix::remove(int row, int col) //removes a specific row and col
 	for (int i{}; i < m_rows && ii < temp.m_rows; i++)
 	{
 		int jj{};
-
 		if (i == row)
 			continue;
 
@@ -36,7 +35,6 @@ Matrix Matrix::remove(int row, int col) //removes a specific row and col
 		{
 			if (j == col)
 				++j;
-
 			temp.m_matrix[ii][jj] = m_matrix[i][j];
 			++jj;
 		}
