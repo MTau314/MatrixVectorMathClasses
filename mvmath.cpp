@@ -1,3 +1,4 @@
+/* Matthew Louigi Cabie Ong 2020 */
 #include "mvmath.h"
 
 /* Vector Math functions */
