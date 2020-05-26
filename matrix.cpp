@@ -1,3 +1,4 @@
+/* Matthew Louigi Cabie Ong 2020 */
 #include "matrix.h"
 
 /* Utility functions */
