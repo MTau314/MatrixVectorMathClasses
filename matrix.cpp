@@ -41,7 +41,7 @@ Matrix Matrix::remove(int row, int col) //removes a specific row and col
 		++ii;
 	}
 
-	return Matrix{ temp };
+	return temp;
 }
 
 void Matrix::setAll(float value)
@@ -171,7 +171,7 @@ Matrix Matrix::operator*(const float k)
 		for (int j{}; j < m_rows; j++)
 			virtualProduct.m_matrix[i][j] *= k;
 
-	return Matrix{ virtualProduct };
+	return virtualProduct;
 }
 
 Matrix Matrix::operator/(const float k)
@@ -186,7 +186,7 @@ Matrix Matrix::operator+(const Matrix& m)
 		for (int j{}; j < m_rows; j++)
 			virtualSum.m_matrix[i][j] += m.m_matrix[i][j];
 
-	return Matrix{ virtualSum };
+	return virtualSum;
 }
 
 Matrix Matrix::operator-(const Matrix& m)
@@ -196,7 +196,7 @@ Matrix Matrix::operator-(const Matrix& m)
 		for (int j{}; j < m_rows; j++)
 			virtualDiff.m_matrix[i][j] -= m.m_matrix[i][j];
 
-	return Matrix{ virtualDiff };
+	return virtualDiff;
 }
 
 float& Matrix::operator()(int i, int j) { return m_matrix[i][j]; }
