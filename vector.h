@@ -1,3 +1,4 @@
+/* Matthew Louigi Cabie Ong 2020 */
 #ifndef VECTOR_H
 #define VECTOR_H
 
