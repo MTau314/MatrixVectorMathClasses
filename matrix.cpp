@@ -150,13 +150,14 @@ Matrix& Matrix::rowReduce() /*	courtesy of rosettacode/wikipedia pseudocode	*/
 /* operator */
 std::ostream& operator<<(std::ostream& out, const Matrix& mat)
 {
+	const double TOL{1e-12};
 	for (int i{}; i < mat.m_rows; i++)
 	{
 		//std::cout << std::fixed << std::setprecision(2);
 		std::cout << std::setw(2);
 		for (int j{}; j < mat.m_cols; j++)
 		{
-			if (std::abs(mat.m_matrix[i][j] - 0.0) < 1e-12)
+			if (std::abs(mat.m_matrix[i][j] - 0.0) < TOL)
 				mat.m_matrix[i][j] = std::abs(mat.m_matrix[i][j]);
 			out << mat.m_matrix[i][j] << std::setw(10);
 		}
