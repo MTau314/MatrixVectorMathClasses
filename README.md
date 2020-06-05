@@ -1,87 +1,48 @@
 # Project Title
 
-One Paragraph of project description goes here
+This is my personal project to try to culminate my understanding of C++. It is Matrix annd Vector Engine that allows for the creation of a number container in which Matrix and Vector operations can be performed on. This project was meant to be portable in graphical libraries to allow for certain algorithms, but, as of writing this, has not yet been implemented.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Simply clone or download this entire repositry to have full access to Matrices, Vectors and their associated functions
 
-### Prerequisites
+### Sample
+Start by #include "mvmath.h"
 
-What things you need to install the software and how to install them
+- Initialize a Vector as
+    Vector v{1,2,3} or 
+    Vector w(1,2,3) or 
+    Vector u = v
 
-```
-Give examples
-```
+- Run vector functions included in mvmath.h under VMath namespace
+    VMath::proj(v,w);
+    To see implementation, simply take a look at mvmath.cpp
+- Run vector functions include in vector.h
+    v.setAll(1);
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+- Initialize a Matrix as
+    Matrix A(2,3);
+    A = { 1, 2, 3,
+          4, 5, 6 };
+    This initialization starts with your explicit declaration of Matrix size, followed by the input of values
+          
+    Matrix B(Vector{1,2,3}, Vector{1,2,3}, Vector{1,2,3}) or
+    Matrix C = A;
+    
+- Run matrix functions included in mvmath.h under MMath namespace
+  MMath::inv(B);
+- Run matrix functions include in matrix.h
+  B.rowReduce(); or B.setAll(1);
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Matthew Ong** - *Initial work* - [MTau314](https://github.com/MTau314)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+Not licensed. Okay for personal use, acknowledgements if used publicly.
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* javidx9 for showing the possibilites of C++ *
+* wikipedia for explanations on row reducing algortihms *
