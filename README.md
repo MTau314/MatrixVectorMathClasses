@@ -1,6 +1,6 @@
 # Project Title
 
-This is my personal project to try to culminate my understanding of C++. It is Matrix annd Vector Engine that allows for the creation of a number container in which Matrix and Vector operations can be performed on. This project was meant to be portable in graphical libraries to allow for certain algorithms, but, as of writing this, has not yet been implemented.
+This is my personal project to try to culminate my understanding of C++. It is Matrix annd Vector class that allows for the creation of a number container in which Matrix and Vector operations can be performed on. This project was meant to be portable in graphical libraries to allow for certain algorithms, but, as of writing this, has not yet been implemented.
 
 ## Getting Started
 
