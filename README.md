@@ -14,29 +14,28 @@ Start by #include "mvmath.h"
     Vector w(1,2,3) or 
     Vector u = v
 
-- Run vector functions included in mvmath.h under VMath namespace --
-    VMath::proj(v,w);
-    To see implementation, simply take a look at mvmath.cpp
+- Run vector functions included in mvmath.h under VMath namespace (To see implementation, simply take a look at mvmath.cpp) --
+    VMath::proj(v,w)
 - Run vector functions include in vector.h --
-    v.setAll(1)
+    v.setAll(1) or v.magnitude()
 
 - Initialize a Matrix as
-    Matrix A(2,3);
+    Matrix A(2,3) and 
     A = { 1, 2, 3,
-          4, 5, 6 };
-    (This initialization starts with your explicit declaration of Matrix size, followed by the input of values)
+          4, 5, 6 }
+    (This initialization starts with your explicit declaration of Matrix size, followed by the input of values); or 
           
     Matrix B(Vector{1,2,3}, Vector{1,2,3}, Vector{1,2,3}) or
     Matrix C = A;
     
 - Run matrix functions included in mvmath.h under MMath namespace --
-  MMath::inv(B);
+  MMath::inv(B)
 - Run matrix functions include in matrix.h --
-  B.rowReduce(); or B.setAll(1);
+  B.rowReduce() or B.setAll(1) or B.augRank()
 
 ## Authors
 
-* **Matthew Ong** - *Initial work* - [MTau314](https://github.com/MTau314)
+* **Matthew Ong** - [MTau314](https://github.com/MTau314)
 
 ## License
 
@@ -45,4 +44,4 @@ Not licensed. Okay for personal use, acknowledgements if used publicly.
 ## Acknowledgments
 
 * javidx9 for showing the possibilites of C++ *
-* wikipedia for explanations on row reducing algortihms *
+* wikipedia and rosettacode for explanations and [pseudocode](https://rosettacode.org/wiki/Reduced_row_echelon_form#C.2B.2B) on row reducing algortihms *
