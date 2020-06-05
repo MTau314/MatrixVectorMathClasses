@@ -1,4 +1,3 @@
-/* Matthew Louigi Cabie Ong 2020 */
 #include "vector.h"
 
 /* Functions */
@@ -6,6 +5,15 @@ void Vector::setAll(int value)
 {
 	for (int i{}; i < m_size; i++)
 		m_vector[i] = static_cast<float>(value);
+}
+
+float Vector::magnitude()
+{
+	float sum{};
+	for (int i{}; i < m_size; i++)
+		sum += (m_vector[i] * m_vector[i]);
+
+	return sqrt(sum); //similar idea to pythagorean thm.
 }
 
 /* Operators */

@@ -1,4 +1,3 @@
-/* Matthew Louigi Cabie Ong 2020 */
 #ifndef MATRIX_H
 #define MATRIX_H
 
@@ -155,6 +154,9 @@ public:
 	Matrix& resize(int row, int col);
 	Matrix remove(int row, int col);
 	void setAll(float value);
+
+	int cofRank(int m, int n);
+	int augRank();
 
 	/* Matrix Operations for Row and Columns */
 	Matrix& rowSwap(int row1, int row2);

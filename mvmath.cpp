@@ -1,16 +1,6 @@
-/* Matthew Louigi Cabie Ong 2020 */
 #include "mvmath.h"
 
 /* Vector Math functions */
-float VMath::magnitude(const Vector& v)
-{
-	float sum{};
-	for (int i{}; i < v.getSize(); i++)
-		sum += (v.at(i) * v.at(i));
-
-	return sqrt(sum); //similar idea to pythagorean thm.
-}
-
 float VMath::dot(const Vector& v, const Vector& u)
 {
 	assert(v.getSize() == u.getSize() && "Not the same size");
@@ -33,52 +23,16 @@ Vector VMath::cross(const Vector& u, const Vector& v)
 
 Vector VMath::proj(const Vector& v, Vector& onto)
 {
-	float multi{ (dot(v,onto)) / (magnitude(onto) * magnitude(onto)) };
+	float multi{ (dot(v,onto)) / (onto.magnitude() * onto.magnitude()) };
 	Vector temp{ onto * multi };
 	return temp;
 }
 
 /* Matrix Math functions */
-
-int MMath::cofRank(const Matrix& A, int m, int n)
-{
-	Matrix cofM{ A };
-	cofM.resize(m, n); //narrow to wanted size ignoring the most-right hand side
-	cofM.rowReduce();
-
-	int rank{};
-	for (int rlead{}; rlead < m; rlead++)
-		for (int clead{}; clead < n; clead++) //checl entire row if non-zero
-			if (cofM.at(rlead, clead) != 0)
-			{
-				++rank;
-				break;
-			}
-
-	return rank;
-}
-
-int MMath::augRank(const Matrix& A)
-{
-	Matrix augM{ A };
-	augM.rowReduce();
-
-	int rank{};
-	for (int rlead{}; rlead < A.getRow(); rlead++)
-		for (int clead{}; clead < A.getCol(); clead++)
-			if (augM.at(rlead, clead) != 0)
-			{
-				++rank;
-				break;
-			}
-
-	return rank;
-}
-
 double MMath::det(const Matrix& A)
 {
 	if (A.getCol() == 2 && A.getRow() == 2)
-		return (A.at(0, 0) * A.at(1, 1) - A.at(0, 1) * A.at(1, 0)); // ad - bc
+		return (static_cast<double>(A.at(0, 0) * A.at(1, 1)) - A.at(0, 1) * A.at(1, 0)); // ad - bc
 	if (A.getCol() == 1 && A.getRow() == 1)
 		return A.at(0, 0);
 
@@ -121,7 +75,7 @@ Matrix MMath::adj(const Matrix& A)
 Matrix MMath::inv(const Matrix& A)
 {
 	assert(A.getRow() != A.getCol() || det(A) != 0 && "Inverse does not exist");
-	return Matrix{ adj(A) * (1.0f / det(A)) };
+	return Matrix{ adj(A) * static_cast<float>(1.0f / det(A)) };
 }
 
 Matrix MMath::multiply(const Matrix& A, const Matrix& B) // mxn and nxp will result in an mxp matrix 
@@ -158,7 +112,7 @@ Matrix MMath::multiply(const Matrix& A, Vector& v)
 	return MVProduct;
 }
 
-Matrix MMath::selfMultiply(const Matrix& A, int exp)
+Matrix MMath::power(const Matrix& A, int exp)
 {
 	Matrix AProduct{ A };
 

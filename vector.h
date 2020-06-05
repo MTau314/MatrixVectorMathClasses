@@ -1,4 +1,3 @@
-/* Matthew Louigi Cabie Ong 2020 */
 #ifndef VECTOR_H
 #define VECTOR_H
 
@@ -64,6 +63,7 @@ public:
 	float at(int index) const { return m_vector[index]; }
 	const int getSize() const { return m_size; }
 	void setAll(int value);
+	float magnitude();
 
 	/* Operators */
 	friend std::ostream& operator<<(std::ostream& out, const Vector& v);

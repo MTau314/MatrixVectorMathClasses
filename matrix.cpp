@@ -54,6 +54,41 @@ void Matrix::setAll(float value)
 			m_matrix[i][j] = (float)value;
 }
 
+int Matrix::cofRank(int m, int n)
+{
+	Matrix cofM{ *this };
+	cofM.resize(m, n); //narrow to wanted size ignoring the most-right hand side
+	cofM.rowReduce();
+
+	int rank{};
+	for (int rlead{}; rlead < m; rlead++)
+		for (int clead{}; clead < n; clead++) //checl entire row if non-zero
+			if (cofM.at(rlead, clead) != 0)
+			{
+				++rank;
+				break;
+			}
+
+	return rank;
+}
+
+int Matrix::augRank()
+{
+	Matrix augM{ *this };
+	augM.rowReduce();
+
+	int rank{};
+	for (int rlead{}; rlead < m_rows; rlead++)
+		for (int clead{}; clead < m_cols; clead++)
+			if (augM.at(rlead, clead) != 0)
+			{
+				++rank;
+				break;
+			}
+
+	return rank;
+}
+
 /* Matrix Operations for Rows and Cols */
 Matrix& Matrix::rowSwap(int row1, int row2)
 {
@@ -150,19 +185,16 @@ Matrix& Matrix::rowReduce() /*	courtesy of rosettacode/wikipedia pseudocode	*/
 /* operator */
 std::ostream& operator<<(std::ostream& out, const Matrix& mat)
 {
-	const double TOL{1e-12};
 	for (int i{}; i < mat.m_rows; i++)
 	{
-		//std::cout << std::fixed << std::setprecision(2);
-		std::cout << std::setw(2);
+		out << std::fixed << std::setprecision(2); //2 decimal places
 		for (int j{}; j < mat.m_cols; j++)
 		{
-			if (std::abs(mat.m_matrix[i][j] - 0.0) < TOL)
+			if (std::abs(mat.m_matrix[i][j] - 0.0) < 1e-12)
 				mat.m_matrix[i][j] = std::abs(mat.m_matrix[i][j]);
-			out << mat.m_matrix[i][j] << std::setw(10);
+			out << std::setw(8) << mat.m_matrix[i][j] << ' ';
 		}
 
-		std::cout << std::setw(1);
 		out << std::endl;
 	}
 
