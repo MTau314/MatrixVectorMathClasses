@@ -14,24 +14,24 @@ Start by #include "mvmath.h"
     Vector w(1,2,3) or 
     Vector u = v
 
-- Run vector functions included in mvmath.h under VMath namespace
+- Run vector functions included in mvmath.h under VMath namespace --
     VMath::proj(v,w);
     To see implementation, simply take a look at mvmath.cpp
-- Run vector functions include in vector.h
-    v.setAll(1);
+- Run vector functions include in vector.h --
+    v.setAll(1)
 
 - Initialize a Matrix as
     Matrix A(2,3);
     A = { 1, 2, 3,
           4, 5, 6 };
-    This initialization starts with your explicit declaration of Matrix size, followed by the input of values
+    (This initialization starts with your explicit declaration of Matrix size, followed by the input of values)
           
     Matrix B(Vector{1,2,3}, Vector{1,2,3}, Vector{1,2,3}) or
     Matrix C = A;
     
-- Run matrix functions included in mvmath.h under MMath namespace
+- Run matrix functions included in mvmath.h under MMath namespace --
   MMath::inv(B);
-- Run matrix functions include in matrix.h
+- Run matrix functions include in matrix.h --
   B.rowReduce(); or B.setAll(1);
 
 ## Authors
