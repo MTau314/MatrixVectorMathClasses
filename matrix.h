@@ -81,9 +81,9 @@ Vector proj(const Vector& v, Vector& onto);
 class Matrix
 {
 private:
-	int m_rows{ 0 };
-	int m_cols{ 0 };
-	float** m_matrix{ nullptr };
+	int m_rows;
+	int m_cols;
+	float** m_matrix;
 
 public:
 	Matrix() = delete;
