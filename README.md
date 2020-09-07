@@ -7,8 +7,8 @@ September update: I have added a simple Matrix initialization from a file, as we
 ## Applications
 Just to name a couple of the uses of this project that I have integrated in my school work:
 <ul>
-  <li> Linear Algebra homework </li>
-  <li> Circuits Equation Solve </li>
+  <li> Linear Algebra Calculator </li>
+  <li> Circuits Equation Solver </li>
   <li> Game prototype terrain generator </li>
 </ul>
 
