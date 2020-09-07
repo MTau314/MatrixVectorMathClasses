@@ -4,10 +4,6 @@ This is my personal project to try to culminate my understanding of C++. It is M
 
 September update: I have added a simple Matrix initialization from a file, as well as refactored parts of the code (with Move semantics implementation to reduce memory usage). 
 
-## Getting Started
-
-Simply clone or download this entire repositry to have full access to Matrices, Vectors and their associated functions and just #include "matrix.h" in your project.
-
 ## Applications
 Just to name a couple of the uses of this project that I have integrated in my school work:
 <ul>
@@ -15,6 +11,10 @@ Just to name a couple of the uses of this project that I have integrated in my s
   <li> Circuits Equation Solve </li>
   <li> Game prototype terrain generator </li>
 </ul>
+
+## Getting Started
+
+Simply clone or download this entire repositry to have full access to Matrices, Vectors and their associated functions and just #include "matrix.h" in your project.
 
 ### Declaring Matrices and Vectors
 To declare a vector simply code: Vector a{1,2,3,4};<br/>
