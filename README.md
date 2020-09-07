@@ -8,6 +8,14 @@ September update: I have added a simple Matrix initialization from a file, as we
 
 Simply clone or download this entire repositry to have full access to Matrices, Vectors and their associated functions and just #include "matrix.h" in your project.
 
+## Applications
+Just to name a couple of the uses of this project that I have integrated in my school work:
+<ul>
+  <li> Linear Algebra homework </li>
+  <li> Circuits Equation Solve </li>
+  <li> Game prototype terrain generator </li>
+</ul>
+
 ### Declaring Matrices and Vectors
 To declare a vector simply code: Vector a{1,2,3,4};<br/>
 To declare a matrix you can code it in different ways: <br/><br/>
@@ -31,9 +39,8 @@ In Filesrc.txt:<br/>
 1 0 2<br/>
 3 12 4<br/>
 9 -3 4<br/>
-<br/><br/>
 
-Copy and assignment initialization are fully implemented
+*Copy and assignment initialization are fully implemented for both classes*
 
 ### Matrices and Vectors Functions
 **Both Matrices and Vectors can be outputted with <<**<br/>
