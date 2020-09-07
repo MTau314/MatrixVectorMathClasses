@@ -2,7 +2,7 @@
 
 This is my personal project to try to culminate my understanding of C++. It is Matrix and Vector class that allows for the creation of a number container in which Matrix and Vector operations can be performed on. This project was meant to be portable in graphical libraries to allow for certain algorithms, but, as of writing this, has not yet been implemented.
 
-June update: I simplified a couple of implementations of functions and what files to clone. I plan to refactor code to make it more efficient and add more functionality in future, such as reading from a file.
+September update: I have added a simple Matrix initialization from a file, as well as refactored parts of the code (with Move semantics implementation to reduce memory usage). 
 
 ## Getting Started
 
@@ -22,9 +22,23 @@ Matrix c{a,b}; //a and b are vectors<br/><br/>
 (iii) Augmented matrix initialization:<br/>
 Matrix i{c,a}; //c is a matrix and a is vector<br/><br/>
 
+(iv) File initialization:<br/>
+Matrix f{3,3}; //must declare size<br/>
+std::ifstream fileIn("Filesrc.txt"); //check for file open success<br/>
+readMatrix(fileIn,f);<br/>
+
+In Filesrc.txt:<br/>
+1 0 2
+3 12 4
+9 -3 4
+<br/><br/>
+
 Copy and assignment initialization are fully implemented
 
-### Declaring Matrices and Vectors
+### Matrices and Vectors Functions
+**Both Matrices and Vectors can be outputted with <<**<br/>
+**September update note: applicable operators now handle commutativity**<br/>
+
 Vector functional functions:
 <ul>
   <li>.setAll(int value) will set the vector values to value paramter</li>
@@ -33,7 +47,7 @@ Vector functional functions:
   <li>dot(Vector a, Vector b) will return the dot product between a and b</li>
   <li>cross(Vector a, Vector b) will return the vector of a cross b</li>
   <li>proj(Vector a, Vector b) will return the vector from a projected onto b</li>
-  <li>Vector class has a .get(int index) for reference and .at(int index) for value</li>
+  <li>Vector class has a .at(int index) and operator[] for element retrieval</li>
 </ul>
 
 Matrix functional functions:
@@ -41,13 +55,13 @@ Matrix functional functions:
   <li>.setAll(int value) will set the matrix values to value paramter<li>.eye() is a special setAll for an identity matrix</li></li>
   <li>.cofRank(int m, int n) will return the mxn matrix rank and .augRank() will return augmented matrix rank</li>
   <li>.det() will return determinant</li>
-  <li>.eApply(function) will apply the specified function to each element</li>
+  <li>**.eApply(function) will apply the specified function to each element**</li>
   <li>.rowReduce() will row reduce matrix</li>
   <li>.transpose() will return a transposed matrix</li>
   <li>.dim() will matrix mxn dimension and .size() returns a vector with m and n values</li>
   <li>adj() and inv() will return matrix adjective and inverse</li>
   <li>multiply(Matrix matrix, Vector vector) and multiply(Matrix matrix1, Matrix matrix2) performs matrix multiplication</li>
-  <li>Matrix class has a .get(int index) for reference and .at(int index) for value</li>
+  <li>Matrix class has a .at(int index), operator[], and operator() for element retrieval</li>
 </ul>
 
 ## Authors
