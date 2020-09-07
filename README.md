@@ -28,9 +28,9 @@ std::ifstream fileIn("Filesrc.txt"); //check for file open success<br/>
 readMatrix(fileIn,f);<br/>
 
 In Filesrc.txt:<br/>
-1 0 2
-3 12 4
-9 -3 4
+1 0 2<br/>
+3 12 4<br/>
+9 -3 4<br/>
 <br/><br/>
 
 Copy and assignment initialization are fully implemented
